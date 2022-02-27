@@ -128,27 +128,6 @@ void CharmonicsignalDlg::DrawSignal(Signal sgn, CDC* WinDc, CRect WinPic, CPen* 
 		}
 	}
 
-	// вертикальные линии сетки координат
-	for (double i = WinPic.Width() / 15; i < WinPic.Width(); i += WinPic.Width() / 10)
-	{
-		if (i != 0) {
-			MemDc->MoveTo(i, 0);
-			MemDc->LineTo(i, WinPic.Height());
-		}
-	}
-	// горизонтальные линии сетки координат
-	for (double i = WinPic.Height() / 2; i < WinPic.Height(); i += WinPic.Height() / 10)
-	{
-		MemDc->MoveTo(0, i);
-		MemDc->LineTo(WinPic.Width(), i);
-	}
-	// горизонтальные линии сетки координат
-	for (double i = WinPic.Height() / 2; i > 0; i -= WinPic.Height() / 10)
-	{
-		MemDc->MoveTo(0, i);
-		MemDc->LineTo(WinPic.Width(), i);
-	}
-
 	// отрисовка осей
 	MemDc->SelectObject(&axes_pen);
 	// отрисовка оси X
